@@ -27,7 +27,7 @@ This project provides a Grafana stack using Garden, including Grafana, Loki, Tem
 ## TODO
 
 - [x] Grafana
-- [ ] Loki
+- [x] Loki
 - [ ] Tempo
 - [ ] Mimir
 - [ ] Local persisting

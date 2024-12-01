@@ -2,6 +2,9 @@ kind: Deploy
 type: helm
 name: grafana
 
+dependencies:
+  - deploy.loki
+
 spec:
   chart:
     name: grafana
@@ -21,3 +24,12 @@ spec:
       log:
         level: debug
         mode: console
+    datasources:
+      datasources.yaml:
+        apiVersion: 1
+        datasources:
+          - name: Loki
+            type: loki
+            url: http://loki:3100
+            access: proxy
+            isDefault: true
