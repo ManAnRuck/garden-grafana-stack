@@ -1,0 +1,23 @@
+kind: Deploy
+type: helm
+name: grafana
+
+spec:
+  chart:
+    name: grafana
+    repo: https://grafana.github.io/helm-charts
+    version: 8.6.4
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - grafana.${var.hostname}
+    grafana.ini:
+      auth.anonymous:
+        enabled: true
+        org_role: Admin
+      auth:
+        disable_login_form: true
+      log:
+        level: debug
+        mode: console
