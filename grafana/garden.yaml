@@ -9,7 +9,7 @@ spec:
   chart:
     name: grafana
     repo: https://grafana.github.io/helm-charts
-    version: 8.6.4
+    version: 8.12.1
   values:
     ingress:
       enabled: true

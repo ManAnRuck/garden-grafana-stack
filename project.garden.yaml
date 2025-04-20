@@ -1,6 +1,8 @@
-apiVersion: garden.io/v1
+apiVersion: garden.io/v2
 kind: Project
 name: garden-grafana-stack
+
+dotIgnoreFile: .gitignore
 
 defaultEnvironment: local
 

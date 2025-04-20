@@ -6,7 +6,7 @@ spec:
   chart:
     name: loki
     repo: https://grafana.github.io/helm-charts
-    version: 6.22.0
+    version: 6.29.0
   values:
     loki:
       auth_enabled: false
@@ -30,6 +30,13 @@ spec:
         max_concurrent: 2
 
     gateway:
+     resources:
+       limits:
+         cpu: 0
+         memory: 0Mi
+       requests:
+         cpu: 0
+         memory: 0Mi
      ingress:
        enabled: true
        hosts:
@@ -43,11 +50,11 @@ spec:
       replicas: 1
       resources:
         limits:
-          cpu: 3
-          memory: 4Gi
+          cpu: 0
+          memory: 0Mi
         requests:
-          cpu: 2
-          memory: 2Gi
+          cpu: 0
+          memory: 0Mi
       extraEnv:
         # Keep a little bit lower than memory limits
         - name: GOMEMLIMIT
